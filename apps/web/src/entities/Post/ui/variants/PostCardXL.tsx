@@ -25,7 +25,7 @@ const PostCardXL: FC<Omit<TPostCardProps, 'size'>> = ({
     _count: { comments },
     preview
   },
-	...props
+  ...props
 }) => {
   const [isLoaded, setIsLoaded] = useState<boolean>(false)
 
@@ -34,34 +34,39 @@ const PostCardXL: FC<Omit<TPostCardProps, 'size'>> = ({
   }, [])
 
   return (
-    <Link href={`/post/${id}/${slug}`} {...props}>
+    <Link
+      href={`/post/${id}/${slug}`}
+      {...props}
+    >
       <Card className='rounded-small bg-transparent shadow-none'>
-				<Image src={preview} className='z-0' isZoomed />
-				<div className='p-4 absolute top-0 left-0 flex flex-col justify-between h-full w-full z-10'>
-					<Skeleton isLoaded={isLoaded}>
-						<CardHeader>
-							<p>
-								{category?.icon} {category?.title}
-							</p>
-						</CardHeader>
-					</Skeleton>
-					<CardFooter className='flex flex-col items-stretch'>
-						<Skeleton isLoaded={isLoaded}>
-							<h1>{title}</h1>
-						</Skeleton>
-						<Skeleton isLoaded={isLoaded}>
-							<div className='flex flex-row justify-between'>
-								<p>
-									{author.name}
-								</p>
-								<p className='flex flex-row'>
-									<MessageCircleMore />
-									<span className='pl-1'>{comments}</span>
-								</p>
-							</div>
-						</Skeleton>
-					</CardFooter>
-				</div>
+        <Image
+          src={preview}
+          className='z-0'
+          isZoomed
+        />
+        <div className='absolute left-0 top-0 z-10 flex h-full w-full flex-col justify-between p-4'>
+          <Skeleton isLoaded={isLoaded}>
+            <CardHeader>
+              <p>
+                {category?.icon} {category?.title}
+              </p>
+            </CardHeader>
+          </Skeleton>
+          <CardFooter className='flex flex-col items-stretch'>
+            <Skeleton isLoaded={isLoaded}>
+              <h1>{title}</h1>
+            </Skeleton>
+            <Skeleton isLoaded={isLoaded}>
+              <div className='flex flex-row justify-between'>
+                <p>{author.name}</p>
+                <p className='flex flex-row'>
+                  <MessageCircleMore />
+                  <span className='pl-1'>{comments}</span>
+                </p>
+              </div>
+            </Skeleton>
+          </CardFooter>
+        </div>
       </Card>
     </Link>
   )

@@ -9,5 +9,5 @@ export default {
   PostCardS,
   PostCardM,
   PostCardMD,
-  PostCardXL,
+  PostCardXL
 }

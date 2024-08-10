@@ -38,13 +38,13 @@ const PostCardMD: FC<Omit<TPostCardProps, 'size'>> = ({
       <Card className='rounded-large shadow-none'>
         <Skeleton isLoaded={isLoaded}>
           <Image
-						src={preview}
-						isZoomed
-						classNames={{
-							zoomedWrapper: 'rounded-b-none',
-							img: 'rounded-b-none'
-						}}
-					/>
+            src={preview}
+            isZoomed
+            classNames={{
+              zoomedWrapper: 'rounded-b-none',
+              img: 'rounded-b-none'
+            }}
+          />
         </Skeleton>
         <CardBody className='flex justify-between px-2 pb-1 pt-2'>
           <CardHeader>
@@ -66,12 +66,12 @@ const PostCardMD: FC<Omit<TPostCardProps, 'size'>> = ({
             </Skeleton>
             <Skeleton isLoaded={isLoaded}>
               <div className='flex flex-row gap-x-2'>
-								<Info />
+                <Info />
                 <AddToBookmarkBtn />
-								<p className='flex flex-row'>
-									<MessageCircleMore />
-									<span className='pl-1'>{comments}</span>
-								</p>
+                <p className='flex flex-row'>
+                  <MessageCircleMore />
+                  <span className='pl-1'>{comments}</span>
+                </p>
               </div>
             </Skeleton>
           </CardFooter>

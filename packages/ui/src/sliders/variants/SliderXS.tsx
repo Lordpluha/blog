@@ -73,14 +73,15 @@ const SliderXS: FC<Omit<TSliderProps, 'size'>> = ({
         spaceBetween={30}
         {...props}
       >
-				{slides.length !== 0
-					? slides.map((el, idx) => <SwiperSlide key={idx}>{el}</SwiperSlide>)
-					: <>
-						<SwiperSlide>SliderXL1</SwiperSlide>
-						<SwiperSlide>SliderXL2</SwiperSlide>
-						<SwiperSlide>SliderXL3</SwiperSlide>
-					</>
-				}
+        {slides.length !== 0 ? (
+          slides.map((el, idx) => <SwiperSlide key={idx}>{el}</SwiperSlide>)
+        ) : (
+          <>
+            <SwiperSlide>SliderXL1</SwiperSlide>
+            <SwiperSlide>SliderXL2</SwiperSlide>
+            <SwiperSlide>SliderXL3</SwiperSlide>
+          </>
+        )}
       </Swiper>
     </section>
   )

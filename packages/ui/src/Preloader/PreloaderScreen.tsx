@@ -1,11 +1,24 @@
+import { FC, HTMLAttributes } from 'react'
 import Preloader from './Preloader'
 
-const PreloaderScreen = () => {
-  return (
-    <div className='fixed h-screen w-screen'>
-      <Preloader />
-    </div>
-  )
+type TPreloaderScreenProps = {
+  wrapperProps?: HTMLAttributes<HTMLDivElement>
+	preloaderProps?: typeof Preloader
 }
+
+const PreloaderScreen: FC<TPreloaderScreenProps> = ({
+  wrapperProps,
+  preloaderProps
+}) => (
+  <div
+    className={'fixed h-screen w-screen'}
+    {...wrapperProps}
+  >
+    <Preloader
+      label='Loading...'
+      {...preloaderProps}
+    />
+  </div>
+)
 
 export default PreloaderScreen

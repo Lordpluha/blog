@@ -39,7 +39,7 @@ const theme: NextUIPluginConfig = {
         background: '#DEDFE1',
         foreground: '#161B1D',
         focus: '#E30613',
-				content1: '#ffffff'
+        content1: '#ffffff'
       }
     },
     dark: {
