@@ -4,5 +4,6 @@ export * from './wrapper'
 
 export * from './icons'
 export * from './sliders'
+export * from './Preloader'
 export { Logo }
 export * from './wrapper'

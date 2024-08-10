@@ -4,14 +4,15 @@
     "build": {
       "dependsOn": ["^build"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
-      "outputs": ["dist/**", ".next/**", "!.next/cache/**", "storybook-static/**"]
+      "outputs": ["dist/**", ".next/**", "!.next/cache/**", "storybook-static/**"],
+			"env": [".env.prod", ".env.prod.local"]
     },
     "lint": {},
     "type-check": {},
     "dev": {
       "cache": false,
       "persistent": true,
-			"env": [".env.local"]
+			"env": [".env.dev", ".env.dev.local"]
     },
     "clean": {
 			"dependsOn": ["^clean"],

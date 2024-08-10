@@ -5,25 +5,26 @@
   "type": "module",
   "scripts": {
     "dev": "storybook dev -p 6006",
-    "build": "storybook build",
+    "build-storybook": "storybook build",
     "test": "storybook dev --smoke-test",
     "eslint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "prettier": "prettier --write \"./**/*.{ts,tsx,json,cjs,md,scss,css}\" --cache",
     "stylelint-fix": "stylelint \"./src/**/*.{scss,css}\" --cache --fix --config @gameblog/stylelint-config",
     "lint": "pnpm run eslint && pnpm run stylelint-fix",
-    "format": "pnpm run prettier && pnpm run stylelint-fix"
+    "format": "pnpm run prettier && pnpm run stylelint-fix",
+    "chromatic": "pnpx chromatic --project-token=chpt_626f531153ab1d9"
   },
   "prettier": "@gameblog/prettier-config",
   "lint-staged": {
     "./*.{ts,json,js,cjs,md,html}": "pnpm run prettier",
     "./src/**/*.{ts,tsx,json,js,mjs,md}": [
-      "pnpm run prettier",
-      "pnpm run eslint"
+      "pnpm run eslint",
+      "pnpm run prettier"
     ],
     "./public/**/*.{json,md}": "pnpm run prettier",
     "./src/**/*.{scss,css}": [
-      "pnpm run prettier",
-      "pnpm run stylelint-fix"
+      "pnpm run stylelint-fix",
+      "pnpm run prettier"
     ]
   },
   "dependencies": {
@@ -32,11 +33,11 @@
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
+    "@chromatic-com/storybook": "1.6.1",
     "@gameblog/eslint-config": "workspace:*",
     "@gameblog/prettier-config": "workspace:*",
     "@gameblog/stylelint-config": "workspace:*",
     "@gameblog/typescript-config": "workspace:*",
-    "@chromatic-com/storybook": "1.6.1",
     "@storybook/addon-essentials": "^8.1.11",
     "@storybook/addon-interactions": "^8.1.11",
     "@storybook/addon-links": "^8.1.11",
@@ -48,6 +49,7 @@
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",
+    "chromatic": "^11.7.0",
     "eslint": "^8.57.0",
     "prettier": "^3.3.2",
     "storybook": "^8.1.11",
