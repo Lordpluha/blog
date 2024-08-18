@@ -23,10 +23,11 @@ const PostCardM: FC<Omit<TPostCardProps, 'size'>> = ({
     author,
     category,
     preview
-  }
+  },
+	...linkProps
 }) => {
   return (
-    <Link href={`posts/${id}/${slug}`}>
+    <Link href={`posts/${id}/${slug}`} {...linkProps}>
       <Card className='flex w-1/3 flex-col gap-y-4 p-4 shadow-none'>
         <div className='relative'>
           <p className='absolute'>

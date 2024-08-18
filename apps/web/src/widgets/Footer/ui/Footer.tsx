@@ -4,10 +4,11 @@ import FooterIcons from './@FooterIcons/FooterIcons'
 import NavigationLeft from './@Navigation/NavigationLeft'
 import NavigationRight from './@Navigation/NavigationRight'
 import styles from './Footer.module.scss'
+import clsx from 'clsx'
 
 function Footer() {
   return (
-    <footer className={styles.footer}>
+    <footer className={clsx('container mx-auto', styles.footer)}>
       <div className={styles.footer__information}>
         <div className={styles.footer__box}>
           <div className={styles.footer__logo}>
@@ -46,7 +47,7 @@ function Footer() {
               alt='GameBlog'
               src='/icon-age.png'
             />
-            <div className={styles.stopGame}>© 1999–2023 StopGame.ru</div>
+            <div className={styles.stopGame}>© 2023-2024 Gameblog.com</div>
             <span>
               Использование любых материалов сайта <br /> без согласования с
               администрацией запрещено

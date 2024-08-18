@@ -8,7 +8,7 @@
   "prettier": "@gameblog/prettier-config",
   "exports": {
     ".": "./tailwind.config.ts",
-    "./NextUITheme": "./theme.ts"
+    "./NextUITheme": "./theme.nextui.ts"
   },
   "devDependencies": {
     "@gameblog/prettier-config": "workspace:*",

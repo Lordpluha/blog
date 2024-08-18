@@ -1,17 +1,15 @@
 import { nextui } from '@nextui-org/react'
 import type { Config } from 'tailwindcss'
-import theme from './theme'
+import NextUITheme from './theme.nextui'
+import TailwindTheme from './theme.tailwind'
+import typography from '@tailwindcss/typography'
 
 // We want each package to be responsible for its own content.
 const config: Omit<Config, 'content'> = {
   theme: {
-    extend: {
-      gridTemplateRows: {
-        '2auto': 'repeat(2, min-content)'
-      }
-    }
+    ...TailwindTheme
   },
   darkMode: 'class',
-  plugins: [nextui(theme)]
+  plugins: [nextui(NextUITheme)]
 }
 export default config

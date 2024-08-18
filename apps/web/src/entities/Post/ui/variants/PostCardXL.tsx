@@ -25,7 +25,7 @@ const PostCardXL: FC<Omit<TPostCardProps, 'size'>> = ({
     _count: { comments },
     preview
   },
-  ...props
+  ...linkProps
 }) => {
   const [isLoaded, setIsLoaded] = useState<boolean>(false)
 
@@ -36,7 +36,7 @@ const PostCardXL: FC<Omit<TPostCardProps, 'size'>> = ({
   return (
     <Link
       href={`/post/${id}/${slug}`}
-      {...props}
+      {...linkProps}
     >
       <Card className='rounded-small bg-transparent shadow-none'>
         <Image

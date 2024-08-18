@@ -24,7 +24,7 @@ function Header() {
     <Navbar
       onMenuOpenChange={setIsMenuOpen}
       isBlurred={false}
-      className='py-[17px] dark'
+      className='container mx-auto py-[17px] dark'
     >
       <NavbarBrand>
         <Link href='/'>

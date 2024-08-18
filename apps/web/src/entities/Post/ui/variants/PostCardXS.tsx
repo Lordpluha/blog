@@ -14,9 +14,10 @@ const PostCardXS: FC<Omit<TPostCardProps, 'size'>> = ({
     slug,
     preview,
     _count: { comments }
-  }
+  },
+	...linkProps
 }) => (
-  <Link href={`/posts/${id}/${slug}`}>
+  <Link href={`/posts/${id}/${slug}`} {...linkProps}>
     <Card
       isPressable={true}
       isHoverable={true}

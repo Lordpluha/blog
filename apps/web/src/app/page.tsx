@@ -1,6 +1,9 @@
+'use client'
 import { PostCard } from '@entities/Post'
-import { Slider, Wrapper } from '@gameblog/ui'
-import { LinkProps } from '@nextui-org/react'
+import { Slider, Wrapper, Preloader } from '@gameblog/ui'
+import { LinkProps, Listbox, ListboxItem } from '@nextui-org/react'
+
+import { MessageSquareText, PencilLine, Play, Radio, Settings } from 'lucide-react'
 
 const XLPost = (props: LinkProps) => (
   <PostCard
@@ -25,8 +28,8 @@ const XLPost = (props: LinkProps) => (
 
 export default function Home() {
   return (
-    <>
-      <Wrapper level={1}>
+    <div className='container mx-auto'>
+      <Wrapper level={1} className='mb-4'>
         <Slider
           size={'xl'}
           slides={[
@@ -55,151 +58,266 @@ export default function Home() {
         />
       </Wrapper>
 
-      <Wrapper level={1}>
-        <header></header>
-        <div>
-          <aside></aside>
-          <div>
-            <Wrapper
-              level={2}
-              className='grid grid-cols-2 border-primary-50 p-4 odd:border-r-1 even:border-l-1 '
-            >
-              <PostCard
-                size='xs'
-                post={{
-                  id: 1,
-                  title: 'Some title',
-                  createdAt: Date(),
-                  slug: 'some_slug',
-                  preview: '/preview.jpg',
-                  _count: { comments: 5 }
-                }}
-                className=''
-              />
-              <PostCard
-                size='xs'
-                post={{
-                  id: 1,
-                  title: 'Some title',
-                  createdAt: Date(),
-                  slug: 'some_slug',
-                  preview: '/preview.jpg',
-                  _count: { comments: 5 }
-                }}
-              />
-              <PostCard
-                size='xs'
-                post={{
-                  id: 1,
-                  title: 'Some title',
-                  createdAt: Date(),
-                  slug: 'some_slug',
-                  preview: '/preview.jpg',
-                  _count: { comments: 5 }
-                }}
-              />
-              <PostCard
-                size='xs'
-                post={{
-                  id: 1,
-                  title: 'Some title',
-                  createdAt: Date(),
-                  slug: 'some_slug',
-                  preview: '/preview.jpg',
-                  _count: { comments: 5 }
-                }}
-              />
-              <PostCard
-                size='xs'
-                post={{
-                  id: 1,
-                  title: 'Some title',
-                  createdAt: Date(),
-                  slug: 'some_slug',
-                  preview: '/preview.jpg',
-                  _count: { comments: 5 }
-                }}
-              />
-              <PostCard
-                size='xs'
-                post={{
-                  id: 1,
-                  title: 'Some title',
-                  createdAt: Date(),
-                  slug: 'some_slug',
-                  preview: '/preview.jpg',
-                  _count: { comments: 5 }
-                }}
-              />
-            </Wrapper>
-            <PostCard
-              size='s'
-              post={{
-                id: 1,
-                title: 'Some title',
-                createdAt: Date(),
-                slug: 'some_slug',
-                preview: '/preview.jpg',
-                _count: { comments: 5 },
-                author: {
-                  name: 'Имя Фамилия'
-                }
-              }}
-            />
-            <PostCard
-              size='m'
-              post={{
-                id: 1,
-                title: 'Some title',
-                createdAt: Date(),
-                slug: 'some_slug',
-                preview: '/preview.jpg',
-                _count: { comments: 5 },
-                author: {
-                  name: 'Имя Фамилия'
-                },
-                category: {
-                  title: 'Блог'
-                }
-              }}
-            />
-            <PostCard
-              size='md'
-              post={{
-                id: 1,
-                title: 'Some title',
-                createdAt: Date(),
-                slug: 'some_slug',
-                preview: '/preview.jpg',
-                _count: { comments: 5 },
-                author: {
-                  name: 'Имя Фамилия'
-                },
-                category: {
-                  title: 'Блог'
-                }
-              }}
-            />
-            <PostCard
-              size='xl'
-              post={{
-                id: 1,
-                title: 'Some title',
-                createdAt: Date(),
-                slug: 'some_slug',
-                preview: '/preview.jpg',
-                _count: { comments: 5 },
-                author: {
-                  name: 'Имя Фамилия'
-                },
-                category: {
-                  title: 'Блог'
-                }
-              }}
-            />
+      <Wrapper level={1} className='mb-4'>
+        <h1 className='text-large'>
+					Всё про видеоигры
+				</h1>
+        <div className='flex flex-row'>
+          <aside className='sticky grow pt-10 pl-3 pr-8 min-w-min max-w-xs overflow-auto hidden lg:block'>
+						<Listbox variant="faded" onAction={(key) => alert(key)}>
+							<ListboxItem
+								key="blogs"
+								startContent={<MessageSquareText />}
+							>
+								Интересные блоги
+							</ListboxItem>
+							<ListboxItem
+								key="articles"
+								startContent={<PencilLine />}
+							>
+								Свежие статьи
+							</ListboxItem>
+							<ListboxItem
+								key="infact"
+								startContent={<Play />}
+							>
+								Инфакт
+							</ListboxItem>
+							<ListboxItem
+								key="streams"
+								showDivider
+								startContent={<Radio />}
+							>
+								Записи стримов
+							</ListboxItem>
+							<ListboxItem
+								key="settings"
+								showDivider
+								startContent={<Settings />}
+							>
+								Настройки
+							</ListboxItem>
+						</Listbox>
+					</aside>
+
+          <div className="grid grid-cols-2 grid-rows-auto gap-6">
+            <div className='col-span-full row-span-1'>
+            	<Wrapper
+	              level={2}
+	              className='grid grid-cols-2 *:border-foreground [&>*:nth-child(2n-1)]:border-r *:border-b p-4'
+	            >
+	              <PostCard
+	                size='xs'
+	                post={{
+	                  id: 1,
+	                  title: 'Some title',
+	                  createdAt: Date(),
+	                  slug: 'some_slug',
+	                  preview: '/preview.jpg',
+	                  _count: { comments: 5 }
+	                }}
+	              />
+	              <PostCard
+	                size='xs'
+	                post={{
+	                  id: 1,
+	                  title: 'Some title',
+	                  createdAt: Date(),
+	                  slug: 'some_slug',
+	                  preview: '/preview.jpg',
+	                  _count: { comments: 5 }
+	                }}
+	              />
+	              <PostCard
+	                size='xs'
+	                post={{
+	                  id: 1,
+	                  title: 'Some title',
+	                  createdAt: Date(),
+	                  slug: 'some_slug',
+	                  preview: '/preview.jpg',
+	                  _count: { comments: 5 }
+	                }}
+	              />
+	              <PostCard
+	                size='xs'
+	                post={{
+	                  id: 1,
+	                  title: 'Some title',
+	                  createdAt: Date(),
+	                  slug: 'some_slug',
+	                  preview: '/preview.jpg',
+	                  _count: { comments: 5 }
+	                }}
+	              />
+	              <PostCard
+	                size='xs'
+	                post={{
+	                  id: 1,
+	                  title: 'Some title',
+	                  createdAt: Date(),
+	                  slug: 'some_slug',
+	                  preview: '/preview.jpg',
+	                  _count: { comments: 5 }
+	                }}
+	              />
+	              <PostCard
+	                size='xs'
+	                post={{
+	                  id: 1,
+	                  title: 'Some title',
+	                  createdAt: Date(),
+	                  slug: 'some_slug',
+	                  preview: '/preview.jpg',
+	                  _count: { comments: 5 }
+	                }}
+	              />
+	            </Wrapper>
+            </div>
+
+						<div className='grid grid-cols-subgrid grid-rows-auto col-span-full gap-6'>
+							<PostCard
+								size='md'
+								post={{
+									id: 1,
+									title: 'Some title',
+									createdAt: Date(),
+									slug: 'some_slug',
+									preview: '/preview.jpg',
+									_count: { comments: 5 },
+									author: {
+										name: 'Имя Фамилия'
+									}
+								}}
+								className='col-span-1 row-span-1'
+							/>
+							<PostCard
+								size='md'
+								post={{
+									id: 1,
+									title: 'Some title',
+									createdAt: Date(),
+									slug: 'some_slug',
+									preview: '/preview.jpg',
+									_count: { comments: 5 },
+									author: {
+										name: 'Имя Фамилия'
+									}
+								}}
+								className='col-span-1 row-span-1'
+							/>
+							<PostCard
+								size='xl'
+								post={{
+									id: 1,
+									title: 'Some title',
+									createdAt: Date(),
+									slug: 'some_slug',
+									preview: '/preview.jpg',
+									_count: { comments: 5 },
+									author: {
+										name: 'Имя Фамилия'
+									},
+									category: {
+										title: 'Блог'
+									}
+								}}
+								className='col-span-full row-span-1'
+							/>
+							<PostCard
+								size='md'
+								post={{
+									id: 1,
+									title: 'Some title',
+									createdAt: Date(),
+									slug: 'some_slug',
+									preview: '/preview.jpg',
+									_count: { comments: 5 },
+									author: {
+										name: 'Имя Фамилия'
+									},
+									category: {
+										title: 'Блог'
+									}
+								}}
+								className='col-span-1 row-span-1'
+							/>
+							<PostCard
+								size='md'
+								post={{
+									id: 1,
+									title: 'Some title',
+									createdAt: Date(),
+									slug: 'some_slug',
+									preview: '/preview.jpg',
+									_count: { comments: 5 },
+									author: {
+										name: 'Имя Фамилия'
+									},
+									category: {
+										title: 'Блог'
+									}
+								}}
+								className='col-span-1 row-span-1'
+							/>
+							<PostCard
+								size='xl'
+								post={{
+									id: 1,
+									title: 'Some title',
+									createdAt: Date(),
+									slug: 'some_slug',
+									preview: '/preview.jpg',
+									_count: { comments: 5 },
+									author: {
+										name: 'Имя Фамилия'
+									},
+									category: {
+										title: 'Блог'
+									}
+								}}
+								className='col-span-full row-span-1'
+							/>
+							<PostCard
+								size='md'
+								post={{
+									id: 1,
+									title: 'Some title',
+									createdAt: Date(),
+									slug: 'some_slug',
+									preview: '/preview.jpg',
+									_count: { comments: 5 },
+									author: {
+										name: 'Имя Фамилия'
+									},
+									category: {
+										title: 'Блог'
+									}
+								}}
+								className='col-span-1 row-span-1'
+							/>
+							<PostCard
+								size='md'
+								post={{
+									id: 1,
+									title: 'Some title',
+									createdAt: Date(),
+									slug: 'some_slug',
+									preview: '/preview.jpg',
+									_count: { comments: 5 },
+									author: {
+										name: 'Имя Фамилия'
+									},
+									category: {
+										title: 'Блог'
+									}
+								}}
+								className='col-span-1 row-span-1'
+							/>
+						</div>
           </div>
         </div>
       </Wrapper>
-    </>
+    </div>
   )
 }

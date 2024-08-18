@@ -46,7 +46,7 @@ export const Wrapper: FC<TWrapperProps> = ({
               : '#262A2C'
             : level === 1
               ? '#E8EAEB'
-              : '#F3F4F5'
+              : '#F3F4F5',
       }}
       {...props}
     >
