@@ -6,7 +6,7 @@ import { Button, ButtonProps } from '@nextui-org/react'
  * Button with a bookmark icon.
  */
 const AddToBookmarkBtn: FC<ButtonProps> = props => (
-  <Button {...props}>
+  <Button {...props} variant='light' isIconOnly aria-label="Add to bookmark">
     <Bookmark className='stroke-gray-400 stroke-1 hover:stroke-red-600' />
   </Button>
 )

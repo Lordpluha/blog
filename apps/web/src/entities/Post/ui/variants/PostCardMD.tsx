@@ -66,7 +66,7 @@ const PostCardMD: FC<Omit<TPostCardProps, 'size'>> = ({
               <p>{dateConverter(createdAt)}</p>
             </Skeleton>
             <Skeleton isLoaded={isLoaded}>
-              <div className='flex flex-row gap-x-2'>
+              <div className='flex flex-row gap-x-2 items-center'>
                 <Info />
                 <AddToBookmarkBtn />
                 <p className='flex flex-row'>

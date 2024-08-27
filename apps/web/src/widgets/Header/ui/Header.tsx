@@ -24,65 +24,69 @@ function Header() {
     <Navbar
       onMenuOpenChange={setIsMenuOpen}
       isBlurred={false}
-      className='container mx-auto py-[17px] dark'
+      className='py-[17px] dark w-full'
+			maxWidth='2xl'
+			classNames={{
+				wrapper: 'flex items-center justify-stretch w-full',
+
+			}}
     >
-      <NavbarBrand>
-        <Link href='/'>
-          <Logo />
-        </Link>
-      </NavbarBrand>
+			<NavbarBrand justify='start'>
+				<Link href='/'>
+					<Logo />
+				</Link>
+			</NavbarBrand>
 
-      <NavbarContent
-        className='hidden flex-row lg:flex'
-        justify='center'
-      >
-        <NavbarItem>
-          <Link href='/news'>Новости</Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link href='/read'>Читать</Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link href='/watch'>Смотреть</Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link href='/blogs'>Блоги</Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link href='/streams'>Стримы</Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link href='/games'>Игры</Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link href='/cheats'>Читы</Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link href='/support'>Помощь</Link>
-        </NavbarItem>
-      </NavbarContent>
+			<NavbarContent
+				className='hidden flex-row lg:flex'
+			>
+				<NavbarItem>
+					<Link href='/news'>Новости</Link>
+				</NavbarItem>
+				<NavbarItem>
+					<Link href='/read'>Читать</Link>
+				</NavbarItem>
+				<NavbarItem>
+					<Link href='/watch'>Смотреть</Link>
+				</NavbarItem>
+				<NavbarItem>
+					<Link href='/blogs'>Блоги</Link>
+				</NavbarItem>
+				<NavbarItem>
+					<Link href='/streams'>Стримы</Link>
+				</NavbarItem>
+				<NavbarItem>
+					<Link href='/games'>Игры</Link>
+				</NavbarItem>
+				<NavbarItem>
+					<Link href='/cheats'>Читы</Link>
+				</NavbarItem>
+				<NavbarItem>
+					<Link href='/support'>Помощь</Link>
+				</NavbarItem>
+			</NavbarContent>
 
-      <NavbarContent justify='end'>
-        {/* <NavbarItem>
+			<NavbarContent justify='end'>
+				{/* <NavbarItem>
 					<SearchBtn />
 				</NavbarItem> */}
-        <NavbarItem className='hidden md:block'>
-          <ThemeBtn />
-        </NavbarItem>
-        {/* <NavbarItem className='hidden md:block'>
+				<NavbarItem className='hidden md:block'>
+					<ThemeBtn />
+				</NavbarItem>
+				{/* <NavbarItem className='hidden md:block'>
 					<CommentsBtn />
 				</NavbarItem> */}
-        {/* <NavbarItem className='hidden md:block'>
+				{/* <NavbarItem className='hidden md:block'>
 					<UserAuthBtn />
 				</NavbarItem> */}
-        <NavbarMenuToggle
-          className='block lg:hidden'
-          icon={isMenuOpen ? <X /> : <Menu />}
-          aria-label={isMenuOpen ? 'close menu' : 'open menu'}
-          srOnlyText={' '}
-        />
-      </NavbarContent>
-      <NavBarItems />
+				<NavbarMenuToggle
+					className='block lg:hidden'
+					icon={isMenuOpen ? <X /> : <Menu />}
+					aria-label={isMenuOpen ? 'close menu' : 'open menu'}
+					srOnlyText={' '}
+				/>
+			</NavbarContent>
+			<NavBarItems />
     </Navbar>
   )
 }

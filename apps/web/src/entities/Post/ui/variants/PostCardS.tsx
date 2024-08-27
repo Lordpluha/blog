@@ -51,10 +51,10 @@ const PostCardS: FC<Omit<TPostCardProps, 'size'>> = ({
 				tags={post.tags}
 			/> */}
       this is tags list placeholder
-      <div className='flex flex-row justify-between pb-1 pr-1'>
+      <div className='flex flex-row justify-between pb-1 pr-1 items-center'>
         <p className='text-[17px] text-gray-500'>{dateConverter(createdAt)}</p>
 
-        <p className={'flex flex-row'}>
+        <p className='flex flex-row items-center'>
           <MessageCircleMore />
           <span className='pl-1'>{comments}</span>
         </p>

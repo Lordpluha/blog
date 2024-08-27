@@ -29,7 +29,7 @@ export default function RootLayout({
         <ThemeProvider>
           <body className={inter.className}>
             <Header />
-            <main className='w-full'>{children}</main>
+            <main className='w-full mt-40'>{children}</main>
             <Footer />
           </body>
         </ThemeProvider>

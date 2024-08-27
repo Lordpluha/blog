@@ -58,12 +58,12 @@ export default function Home() {
         />
       </Wrapper>
 
-      <Wrapper level={1} className='mb-4'>
+      <Wrapper level={1} className='mb-4 px-9 py-5'>
         <h1 className='text-large'>
 					Всё про видеоигры
 				</h1>
         <div className='flex flex-row'>
-          <aside className='sticky grow pt-10 pl-3 pr-8 min-w-min max-w-xs overflow-auto hidden lg:block'>
+          <aside className='sticky grow mt-12 pb-8 pr-8 max-w-xs overflow-auto hidden lg:block min-w-80'>
 						<Listbox variant="faded" onAction={(key) => alert(key)}>
 							<ListboxItem
 								key="blogs"
@@ -104,74 +104,77 @@ export default function Home() {
             <div className='col-span-full row-span-1'>
             	<Wrapper
 	              level={2}
-	              className='grid grid-cols-2 *:border-foreground [&>*:nth-child(2n-1)]:border-r *:border-b p-4'
+	              className='p-4'
 	            >
-	              <PostCard
-	                size='xs'
-	                post={{
-	                  id: 1,
-	                  title: 'Some title',
-	                  createdAt: Date(),
-	                  slug: 'some_slug',
-	                  preview: '/preview.jpg',
-	                  _count: { comments: 5 }
-	                }}
-	              />
-	              <PostCard
-	                size='xs'
-	                post={{
-	                  id: 1,
-	                  title: 'Some title',
-	                  createdAt: Date(),
-	                  slug: 'some_slug',
-	                  preview: '/preview.jpg',
-	                  _count: { comments: 5 }
-	                }}
-	              />
-	              <PostCard
-	                size='xs'
-	                post={{
-	                  id: 1,
-	                  title: 'Some title',
-	                  createdAt: Date(),
-	                  slug: 'some_slug',
-	                  preview: '/preview.jpg',
-	                  _count: { comments: 5 }
-	                }}
-	              />
-	              <PostCard
-	                size='xs'
-	                post={{
-	                  id: 1,
-	                  title: 'Some title',
-	                  createdAt: Date(),
-	                  slug: 'some_slug',
-	                  preview: '/preview.jpg',
-	                  _count: { comments: 5 }
-	                }}
-	              />
-	              <PostCard
-	                size='xs'
-	                post={{
-	                  id: 1,
-	                  title: 'Some title',
-	                  createdAt: Date(),
-	                  slug: 'some_slug',
-	                  preview: '/preview.jpg',
-	                  _count: { comments: 5 }
-	                }}
-	              />
-	              <PostCard
-	                size='xs'
-	                post={{
-	                  id: 1,
-	                  title: 'Some title',
-	                  createdAt: Date(),
-	                  slug: 'some_slug',
-	                  preview: '/preview.jpg',
-	                  _count: { comments: 5 }
-	                }}
-	              />
+								<h1 className='text-large'>Последние новости</h1>
+	              <div className="grid grid-cols-2 *:border-[#2f3437] [&>*:nth-child(2n-1)]:border-r *:border-b">
+	              	<PostCard
+		                size='xs'
+		                post={{
+		                  id: 1,
+		                  title: 'Some title',
+		                  createdAt: Date(),
+		                  slug: 'some_slug',
+		                  preview: '/preview.jpg',
+		                  _count: { comments: 5 }
+		                }}
+		              />
+		              <PostCard
+		                size='xs'
+		                post={{
+		                  id: 1,
+		                  title: 'Some title',
+		                  createdAt: Date(),
+		                  slug: 'some_slug',
+		                  preview: '/preview.jpg',
+		                  _count: { comments: 5 }
+		                }}
+		              />
+		              <PostCard
+		                size='xs'
+		                post={{
+		                  id: 1,
+		                  title: 'Some title',
+		                  createdAt: Date(),
+		                  slug: 'some_slug',
+		                  preview: '/preview.jpg',
+		                  _count: { comments: 5 }
+		                }}
+		              />
+		              <PostCard
+		                size='xs'
+		                post={{
+		                  id: 1,
+		                  title: 'Some title',
+		                  createdAt: Date(),
+		                  slug: 'some_slug',
+		                  preview: '/preview.jpg',
+		                  _count: { comments: 5 }
+		                }}
+		              />
+		              <PostCard
+		                size='xs'
+		                post={{
+		                  id: 1,
+		                  title: 'Some title',
+		                  createdAt: Date(),
+		                  slug: 'some_slug',
+		                  preview: '/preview.jpg',
+		                  _count: { comments: 5 }
+		                }}
+		              />
+		              <PostCard
+		                size='xs'
+		                post={{
+		                  id: 1,
+		                  title: 'Some title',
+		                  createdAt: Date(),
+		                  slug: 'some_slug',
+		                  preview: '/preview.jpg',
+		                  _count: { comments: 5 }
+		                }}
+		              />
+	              </div>
 	            </Wrapper>
             </div>
 

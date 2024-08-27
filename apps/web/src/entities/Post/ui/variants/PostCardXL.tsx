@@ -57,9 +57,9 @@ const PostCardXL: FC<Omit<TPostCardProps, 'size'>> = ({
               <h1>{title}</h1>
             </Skeleton>
             <Skeleton isLoaded={isLoaded}>
-              <div className='flex flex-row justify-between'>
+              <div className='flex flex-row justify-between items-center'>
                 <p>{author.name}</p>
-                <p className='flex flex-row'>
+                <p className='flex flex-row items-center'>
                   <MessageCircleMore />
                   <span className='pl-1'>{comments}</span>
                 </p>

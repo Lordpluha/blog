@@ -31,9 +31,9 @@ const PostCardXS: FC<Omit<TPostCardProps, 'size'>> = ({
           img: 'object-cover block h-[100px] w-[126px]'
         }}
       />
-      <CardFooter className='flex flex-row justify-between p-0'>
+      <CardFooter className='flex flex-row justify-between p-0 items-center'>
         {dateConverter(createdAt)}
-        <p className='flex flex-row'>
+        <p className='flex flex-row items-center'>
           <MessageCircleMore /> {comments}
         </p>
       </CardFooter>
