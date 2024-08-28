@@ -10,7 +10,8 @@ import {
   Image,
   Link
 } from '@nextui-org/react'
-import type { TPostCardProps } from '@entities/Post/models'
+import {TagsList} from '@entities/Tag'
+import type { TPostCardProps } from '@entities/Post'
 import { dateConverter } from '@/shared/utils'
 
 const PostCardS: FC<Omit<TPostCardProps, 'size'>> = ({
@@ -44,13 +45,12 @@ const PostCardS: FC<Omit<TPostCardProps, 'size'>> = ({
         />
       </Link>
       <CardHeader className='p-0 pt-1'>
-        <Link href={`post/${id}/${slug}`}>{title}</Link>
+        <Link href={`post/${id}/${slug}`} className='text-foreground'>{title}</Link>
       </CardHeader>
-      {/* <TagsList
-				className={styles.articleItemCategory}
-				tags={post.tags}
-			/> */}
-      this is tags list placeholder
+      <TagsList
+				tags={tags}
+				className='self-end'
+			/>
       <div className='flex flex-row justify-between pb-1 pr-1 items-center'>
         <p className='text-[17px] text-gray-500'>{dateConverter(createdAt)}</p>
 

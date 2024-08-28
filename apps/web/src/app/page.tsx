@@ -1,61 +1,16 @@
 'use client'
 import { PostCard } from '@entities/Post'
-import { Slider, Wrapper, Preloader } from '@gameblog/ui'
-import { LinkProps, Listbox, ListboxItem } from '@nextui-org/react'
+import { Wrapper } from '@gameblog/ui'
+import {MainPageSlider} from '@widgets/MainPageSlider'
+import {MainPageAside} from '@widgets/MainPageAside'
+import {LatestNews} from '@widgets/LatestNews'
 
-import { MessageSquareText, PencilLine, Play, Radio, Settings } from 'lucide-react'
-
-const XLPost = (props: LinkProps) => (
-  <PostCard
-    size='xl'
-    post={{
-      id: 1,
-      title: 'Some title',
-      createdAt: Date(),
-      slug: 'some_slug',
-      preview: '/preview.jpg',
-      _count: { comments: 5 },
-      author: {
-        name: 'Имя Фамилия'
-      },
-      category: {
-        title: 'Блог'
-      }
-    }}
-    {...props}
-  />
-)
 
 export default function Home() {
   return (
     <div className='container mx-auto'>
       <Wrapper level={1} className='mb-4'>
-        <Slider
-          size={'xl'}
-          slides={[
-            <div className='grid grid-cols-6 grid-rows-[auto_auto] gap-6'>
-              <XLPost className='col-span-3' />
-              <XLPost className='col-span-3' />
-              <XLPost className='col-span-2' />
-              <XLPost className='col-span-2' />
-              <XLPost className='col-span-2' />
-            </div>,
-            <div className='grid grid-cols-6 grid-rows-[auto_auto] gap-6'>
-              <XLPost className='col-span-3' />
-              <XLPost className='col-span-3' />
-              <XLPost className='col-span-2' />
-              <XLPost className='col-span-2' />
-              <XLPost className='col-span-2' />
-            </div>,
-            <div className='grid grid-cols-6 grid-rows-[auto_auto] gap-6'>
-              <XLPost className='col-span-3' />
-              <XLPost className='col-span-3' />
-              <XLPost className='col-span-2' />
-              <XLPost className='col-span-2' />
-              <XLPost className='col-span-2' />
-            </div>
-          ]}
-        />
+				<MainPageSlider />
       </Wrapper>
 
       <Wrapper level={1} className='mb-4 px-9 py-5'>
@@ -63,42 +18,7 @@ export default function Home() {
 					Всё про видеоигры
 				</h1>
         <div className='flex flex-row'>
-          <aside className='sticky grow mt-12 pb-8 pr-8 max-w-xs overflow-auto hidden lg:block min-w-80'>
-						<Listbox variant="faded" onAction={(key) => alert(key)}>
-							<ListboxItem
-								key="blogs"
-								startContent={<MessageSquareText />}
-							>
-								Интересные блоги
-							</ListboxItem>
-							<ListboxItem
-								key="articles"
-								startContent={<PencilLine />}
-							>
-								Свежие статьи
-							</ListboxItem>
-							<ListboxItem
-								key="infact"
-								startContent={<Play />}
-							>
-								Инфакт
-							</ListboxItem>
-							<ListboxItem
-								key="streams"
-								showDivider
-								startContent={<Radio />}
-							>
-								Записи стримов
-							</ListboxItem>
-							<ListboxItem
-								key="settings"
-								showDivider
-								startContent={<Settings />}
-							>
-								Настройки
-							</ListboxItem>
-						</Listbox>
-					</aside>
+          <MainPageAside />
 
           <div className="grid grid-cols-2 grid-rows-auto gap-6">
             <div className='col-span-full row-span-1'>
@@ -106,75 +26,7 @@ export default function Home() {
 	              level={2}
 	              className='p-4'
 	            >
-								<h1 className='text-large'>Последние новости</h1>
-	              <div className="grid grid-cols-2 *:border-[#2f3437] [&>*:nth-child(2n-1)]:border-r *:border-b">
-	              	<PostCard
-		                size='xs'
-		                post={{
-		                  id: 1,
-		                  title: 'Some title',
-		                  createdAt: Date(),
-		                  slug: 'some_slug',
-		                  preview: '/preview.jpg',
-		                  _count: { comments: 5 }
-		                }}
-		              />
-		              <PostCard
-		                size='xs'
-		                post={{
-		                  id: 1,
-		                  title: 'Some title',
-		                  createdAt: Date(),
-		                  slug: 'some_slug',
-		                  preview: '/preview.jpg',
-		                  _count: { comments: 5 }
-		                }}
-		              />
-		              <PostCard
-		                size='xs'
-		                post={{
-		                  id: 1,
-		                  title: 'Some title',
-		                  createdAt: Date(),
-		                  slug: 'some_slug',
-		                  preview: '/preview.jpg',
-		                  _count: { comments: 5 }
-		                }}
-		              />
-		              <PostCard
-		                size='xs'
-		                post={{
-		                  id: 1,
-		                  title: 'Some title',
-		                  createdAt: Date(),
-		                  slug: 'some_slug',
-		                  preview: '/preview.jpg',
-		                  _count: { comments: 5 }
-		                }}
-		              />
-		              <PostCard
-		                size='xs'
-		                post={{
-		                  id: 1,
-		                  title: 'Some title',
-		                  createdAt: Date(),
-		                  slug: 'some_slug',
-		                  preview: '/preview.jpg',
-		                  _count: { comments: 5 }
-		                }}
-		              />
-		              <PostCard
-		                size='xs'
-		                post={{
-		                  id: 1,
-		                  title: 'Some title',
-		                  createdAt: Date(),
-		                  slug: 'some_slug',
-		                  preview: '/preview.jpg',
-		                  _count: { comments: 5 }
-		                }}
-		              />
-	              </div>
+								<LatestNews />
 	            </Wrapper>
             </div>
 

@@ -39,7 +39,8 @@ const NextUITheme: NextUIPluginConfig = {
         background: '#DEDFE1',
         foreground: '#161B1D',
         focus: '#E30613',
-        content1: '#ffffff'
+        content1: '#ffffff',
+        content4: '#41474a'
       }
     },
     dark: {
@@ -47,7 +48,8 @@ const NextUITheme: NextUIPluginConfig = {
         background: '#161B1D',
         foreground: '#ffffff',
         focus: '#E30613',
-        content1: '#262A2C'
+        content1: '#262A2C',
+				content4: '#41474a'
       }
     }
   }

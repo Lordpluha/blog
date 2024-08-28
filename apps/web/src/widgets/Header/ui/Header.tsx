@@ -3,8 +3,8 @@
 import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import { Logo } from '@gameblog/ui'
-// import { UserAuthBtn } from '@features/Auth'
-// import { CommentsBtn } from '@features/ToggleComments'
+import { UserAuthBtn } from '@features/Auth'
+import { CommentsBtn } from '@features/ToggleComments'
 // import { SearchBtn } from '@features/ToggleSearch'
 import { ThemeBtn } from '@features/ToggleTheme'
 import NavBarItems from './@Navbar/Navbar'
@@ -38,7 +38,7 @@ function Header() {
 			</NavbarBrand>
 
 			<NavbarContent
-				className='hidden flex-row lg:flex'
+				className='hidden flex-row lg:flex [&>*]:text-small'
 			>
 				<NavbarItem>
 					<Link href='/news'>Новости</Link>
@@ -73,12 +73,12 @@ function Header() {
 				<NavbarItem className='hidden md:block'>
 					<ThemeBtn />
 				</NavbarItem>
-				{/* <NavbarItem className='hidden md:block'>
+				<NavbarItem className='hidden md:block'>
 					<CommentsBtn />
-				</NavbarItem> */}
-				{/* <NavbarItem className='hidden md:block'>
+				</NavbarItem>
+				<NavbarItem className='hidden md:block'>
 					<UserAuthBtn />
-				</NavbarItem> */}
+				</NavbarItem>
 				<NavbarMenuToggle
 					className='block lg:hidden'
 					icon={isMenuOpen ? <X /> : <Menu />}

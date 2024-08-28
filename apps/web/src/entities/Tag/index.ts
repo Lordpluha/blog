@@ -1,3 +1,4 @@
-import Tag from './ui/Tag'
+import TagsList from './ui/TagsList'
+import TagsChipList from './ui/TagsChipList'
 import TagModel from './models/Tag.model'
-export { Tag, type TagModel }
+export { TagsList, TagsChipList, type TagModel }
